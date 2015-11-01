@@ -34,10 +34,8 @@
 clear all
 clc
 %% SET THESE PATHS FIRST!
-% Needed to load PNG files
-directoryOfDDSMPNG = 'D:\DDSM Database Downloaded\DoD Malignant Cases\BCRP 1\PNGFiles\DoDMalignantAllCasesPNG\';
-% Needed to load OVERLAY FIles
-directoryOfDDSM = 'D:\DDSM Database Downloaded\DoD Malignant Cases\BCRP 1\PNGFiles\DoD_BCRP_1_ALL_Files\';
+directoryOfDDSMPNG = 'D:\DDSM Database Downloaded\DoDMalignantAllCasesPNG\';
+directoryOfDDSM = 'D:\DDSM Database Downloaded\DoDMalignantAllCases\';
 imageOutputFileFormat = '*.png'; % Notice the STAR dot. Can be *.tif, *.jpg...
 filenames = dir(strcat([directoryOfDDSMPNG, imageOutputFileFormat]));
 %%
@@ -50,7 +48,7 @@ for i = 1:length(filenames)
     temp_mask = poly2mask(bnd_c,bnd_r, heightOfImage,widthOfImage);
     imshow(image, []);
     hold on
-    plot(bnd_c, bnd_r, '-r'); 
+    plot(bnd_c, bnd_r, '--r'); 
     pause;
     close all;
 end
