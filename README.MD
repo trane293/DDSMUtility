@@ -1,4 +1,4 @@
-This is a tutorial for the DDSM Utility v1.0 written by me (Anmol Sharma, Undergrad Engineering Student at DAVIET Jalandhar) to greatly simplify downloading, converting, viewing and extracting annotations from the Digital Database for Screening Mammography (DDSM) database available here: http://marathon.csee.usf.edu/Mammography/Database.html 
+This is a tutorial for the DDSM Utility v2.0 written by me (Anmol Sharma, Undergrad Engineering Student at DAVIET Jalandhar) to greatly simplify downloading, converting, viewing and extracting annotations from the Digital Database for Screening Mammography (DDSM) database available here: http://marathon.csee.usf.edu/Mammography/Database.html 
 
 # Features of the DDSM Utility
 * Easily download multiple case files automatically. 
