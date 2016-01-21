@@ -1,0 +1,92 @@
+3.01    * BSD License.
+
+3.0     * Made various changes to keep the functions in sync with the functions
+          distributed with MATLAB.
+        * Added "pnm" prefix to most files to avoid name collision with the
+          functions distributed with MATLAB.
+        * Fixed syntax errors in "pbmwrite.m", "pgmwrite.m", "ppmwrite.m",
+          "raswrite.m", "sgiwrite.m", "xbmwrite.m".
+        * Added "pnmsetup" for much simpler installation.
+
+2.0.2   * Fixed typos in file "install.txt".
+        * Using empty string rather than empty matrix as initial value of
+          "info.FormatSignature" structure field.
+        * Renamed structure field "info.MaxColorComponentValue" to
+          "info.MaxValue".
+        * Using upper-case letters only in "info.Format" string values (e.g.,
+          "PBM" rather than "pbm").
+        * Renamed "info.FormatVersion" strings so they now use the files magic
+          string (e.g., "P2") rather than a descriptive string.
+        * Fixed bug in "impnminfo.m" which computed "info.BitDepth" incorrectly
+          for truecolor images.
+        * Added 'ScalePixelValues' option to "readpnm.m" so that the function
+          can return the raw unscaled pixel values (user request).
+        * Grayscale and truecolor images which really are just black and white
+          no longer return a logical array.
+        * Changed every occurance of "Matlab" to become "MATLAB".
+        * In "readras.m", added image composition for truecolor images with
+          alpha channel when the alpha channel is not requested (this is for
+          compatibility with MATLAB, but I don't know what it's really for).
+        * Changed PNM encoding string 'raw' to 'rawbits' and 'plain' to
+          'ASCII'.
+        * In "writepnm.m", renamed subfunction "write_raw_data" to
+          "write_rawbits_data" and "write_plain_data" to "write_ascii_data".
+        * A few other minor changes.
+
+2.0.1   * Fixed problem with duplicate PNMGETI.
+
+2.0.0   * New version numbering system like what is common with free
+          software.
+        * Added support for uint8, uint16, and 3D arrays.
+        * Added support for multi-byte PPM/PGM images.
+        * Removed the "clever" way of finding magic numbers in PPM/PGM/PBM
+          files.  Now the magic number must appear at the beginning of the
+          file.
+        * Made the reading/writing functions more like the ones in the
+          matlab/iofun directory.  Now XXXREAD/XXXWRITE are just wrappers to
+          READXXX/WRITEXXX.
+        * Much faster writing of ascii (plain) PPM/PGM/PBM images.
+        * Added support for RAS (Sun raster images).
+        * Added support for SGI/RGBA/RGB/BW (Silicon Graphics images).
+        * Lots of trimming and tweaking in the files.
+        * WRITEPNM can automatically determine if data is truecolor,
+          grayscale or bitmap.
+        * Removed IM2IND etc. tools.  Not sure if they belong here.
+
+1.004   * Added XBMREAD and XBMWRITE.
+
+1.003   * Renamed IM2IND2 to IM2INDD (direct conversion).
+        * Renamed IM2IND to IM2INDS (very slow but memory efficient
+          conversion).
+        * Added new and much faster IM2IND which is based on sorting.
+        * Added IM2INDR (conversion by removing pixels until none left).
+          I'm not sure if is better than the new IM2IND in any way.
+        * Fixed some minor errors in documentation.
+        * Added PNMGETI which is now used for reading image data from
+          ascii images. It ignores bot comments and garbage in ascii
+          image files. It replaces the old PNMGETI and PNMGETC.
+        * Made PBMREAD robust agains trailing garbage when reading
+          binary files. I must have missed this in version 1.001.
+        * Fixed problem with files remaining open after error-exits.
+        * Changed read/write of binary pgm-files from uint8 to ubit1.
+        * Added PNMMAGIC that scans PNM files for magic numbers. The
+          introduction of this function has now made the image reading
+          functions able to read the example images right out the
+          formatted UNIX manual pages pbm(5), pgm(5) and ppm(5)!
+        * Suffix is now automatically added also when there is a "dot"
+          in the directory name.
+        * Toolbox now requires Matlab 5, but still uses the old-style
+          way of representing images (no uint8/3D array support yet.)
+
+1.002   * Added test program PNMTEST.
+        * Fixed bug in IM2IND regarding conversion of intensity images.
+        * Made IM2IND slightly faster.
+        * Added IM2IND2, a faster but much simpler version of IM2IND.
+        * Ensured compatibility with both Matlab 4.2 and 5.1.
+
+1.001   * Fixed a few errors in the documentation.
+        * Made programs more robust agains missing data at end of file.
+        * Made programs robust agains trailing garbage in file.
+        * Fixed compatibility bug. Should work with Matlab 5 now.
+
+1.000   * First release.

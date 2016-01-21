@@ -1,0 +1,33 @@
+Installing the toolbox
+======================
+You can choose between registering the image formats or not
+registering.  I recommend registering the image formats, but
+before you decide, understand the difference.
+
+If you choose to register the image formats, you extend IMREAD,
+IMWRITE, and IMFINFO so they support the new image formats.  The
+new formats are supported "transparently" and you don't use any
+special functions to use the new formats.
+
+If you choose not to register, you must use the old-style function
+names like PPMREAD, XBMWRITE, etc. which require separate
+functions for each image format.
+
+Installing the PNM Toolbox by registering the image formats
+-----------------------------------------------------------
+Run PNMSETUP with the appropriate option.  Use MATLAB's "addpath"
+function to add the "pnm" root directory to MATLAB's search path.
+Then type "help pnmsetup" to see how "pnmsetup" is used.
+
+When the formats are registered, IMREAD and IMWRITE will be able
+to read and write the new image formats, but they will not contain
+any help about the syntax for each of the new formats.  To see
+this help, you must read the help in the reading and writing
+functions for each formats, for instance, "help pnmreadppn" and
+"help pnmwritexbm".
+
+Installing the PNM Toolbox without registering the image formats
+----------------------------------------------------------------
+Run PNMSETUP.  Use MATLAB's "addpath" function to add the "pnm"
+root directory to MATLAB's search path.  Then run "pnmsetup".
+Type "help pnm" to see a list of the functions in the toolbox.
