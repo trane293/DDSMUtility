@@ -102,9 +102,12 @@ for t = 1:numOfFolders1
                 end
                 % Inside the Case file, find all LJPEG images
                 imageFiles = dir(strcat(pathToCaseFile, '*.LJPEG'));
-                
+               
                 % We need to write PNG files in the same directory
                 writePNGFilesHere = [pathToCaseFile, '\PNGFiles\'];
+               
+                % makde the directory PNGFiles
+                mkdir(writePNGFilesHere)
                 
                 % Get the name of case
                 caseName = a{1,i};
