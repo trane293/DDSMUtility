@@ -2,14 +2,14 @@
 
 If you use this utility in your research, I would appreciate of you cite it in your paper/thesis. You can do it as:
 
-@misc{Anmol2015,
+`@misc{Anmol2015,
   author = {Anmol Sharma},
   title = {DDSM Utility},
   year = {2015},
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/trane293/DDSMUtility}},
-}
+}`
 
 # Features of the DDSM Utility
 * Easily download multiple case files automatically. 
