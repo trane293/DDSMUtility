@@ -75,7 +75,7 @@ for t = 1:numOfFolders1
     % DIR command also outputs "." and "..", so we need to skip those
     if(~strcmp(AllCollectionsOfDDSM{1,t}, '.') && ...
             ~strcmp(AllCollectionsOfDDSM{1,t}, '..') && ...
-            AllCollectionsOfDDSM{4,t} == 1)
+            AllCollectionsOfDDSM{5,t} == 1)
         
         
         %% Lets start.
@@ -84,7 +84,7 @@ for t = 1:numOfFolders1
         
         for i = 1:numOfFolders
             % DIR command also outputs "." and "..", so we need to skip those
-            if(~strcmp(a{1,i}, '.') && ~strcmp(a{1,i}, '..') && a{4,i} == 1)
+            if(~strcmp(a{1,i}, '.') && ~strcmp(a{1,i}, '..') && a{5,i} == 1)
                 
                 % Get path of first folder.
                 CaseDirectory = [CollectionDirectory, AllCollectionsOfDDSM{1,t}, '\'];
